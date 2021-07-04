@@ -1,34 +1,56 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Frontend ecommerce online
 
-## Getting Started
+![Captura de la app](../landing.png)
 
-First, run the development server:
+[See the aplication](https://ismaeljdz.github.io/LightDarkMode/) 👀
 
-```bash
-npm run dev
-# or
-yarn dev
+## Welcome! 👋
+
+## light and dark mode 🚀
+
+\*\* Technologies Frontend 🛠
+
+- HTML5
+- CSS3
+- JavaScript,
+- React,
+- Apollo client,
+- Next,
+- Typescript,
+- Redux
+- React testing library
+- Husky
+
+\*\* Technologies Backend 🛠
+
+- Apollo Server,
+- GraphQl,
+- MongoDB
+
+### Pre-requirements 📋
+
+_Que cosas necesitas para instalar el software y como instalarlas_
+
+```
+NodeJs, NPM
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Autores ✒️
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+_Developed by_
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
+- **Ismael JDz7** - _Frontend-Developer_ - [IsmaelJdz7](https://github.com/IsmaelJDz)
+- **Ismael JDz7** - _Backend-Developer_ - [IsmaelJdz7](https://github.com/IsmaelJDz)
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+## Deployment 📦
 
-## Learn More
+_add additional notes about how to do deploy_
 
-To learn more about Next.js, take a look at the following resources:
+_Tools I've used in this project_
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- [Apollo-Server](https://www.apollographql.com/docs/apollo-server/) - Apollo Server
+- [Npm](https://www.npmjs.com/) - Manejador de dependencias
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+---
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+⌨️ con ❤️ por el ☕️ por [IsmaelJDz7](https://github.com/IsmaelJDz) 😊
