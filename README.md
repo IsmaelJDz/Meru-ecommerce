@@ -2,7 +2,7 @@
 
 ![Captura de la app](public/img/Home.png)
 
-[See the aplication](https://ismaeljdz.github.io/LightDarkMode/) 👀
+[See the aplication](https://meru-ecommerce.vercel.app/) 👀
 
 ## Welcome! 👋
 
@@ -36,7 +36,7 @@
 
 ## Deployment 📦
 
-_add additional notes about how to do deploy_
+- [Vercel](https://vercel.com/) - Vercel
 
 _Tools I've used in this project_
 
