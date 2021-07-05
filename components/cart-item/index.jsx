@@ -1,5 +1,5 @@
-import React, { useMemo } from 'react';
-import Image from 'next/image'
+import React, { useMemo } from "react";
+import Image from "next/image";
 
 const CartItemMemo = ({ item: { cover, price, name, quantity } }) => {
   return (
@@ -11,14 +11,17 @@ const CartItemMemo = ({ item: { cover, price, name, quantity } }) => {
           {quantity} x ${price}
         </span>
       </div>
-    </div>)
-}
+    </div>
+  );
+};
 
 const CartItem = ({ item }) => {
+  const { quantity } = item;
 
-  const {quantity} = item;
-
-  const CartItem = useMemo(() => <CartItemMemo item={item} />, [quantity])
+  const CartItem = useMemo(
+    () => <CartItemMemo item={item} />,
+    [quantity]
+  );
   return CartItem;
 };
 

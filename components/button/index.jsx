@@ -1,10 +1,9 @@
-import React from 'react'
+import React from "react";
 
 const Button = ({ handleClick, title, width }) => {
-
   return (
     <button
-      style={ width ? { width: '200px' } : null }
+      style={width ? { width: "200px" } : null}
       onClick={handleClick}
       className="
       bg-gray-900
@@ -15,8 +14,10 @@ const Button = ({ handleClick, title, width }) => {
         hover:text-black
         hover:bg-white
       "
-    >{title}</button>
-  )
-}
+    >
+      {title}
+    </button>
+  );
+};
 
-export default Button
+export default Button;

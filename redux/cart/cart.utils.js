@@ -20,7 +20,9 @@ export const removeItemFromCart = (cartItems, cartItemToRemove) => {
   );
 
   if (existingCartItem.quantity === 1) {
-    return cartItems.filter(cartItem => cartItem.id !== cartItemToRemove.id);
+    return cartItems.filter(
+      cartItem => cartItem.id !== cartItemToRemove.id
+    );
   }
 
   return cartItems.map(cartItem =>
@@ -35,19 +37,19 @@ export const selectCartItemsCount = cartItems => {
     (accumulatedQuantity, cartItem) =>
       accumulatedQuantity + cartItem.quantity,
     0
-  )
-}
+  );
+};
 
 export const selectCartTotal = cartItems => {
-  return cartItems.reduce(
-    (accumulatedQuantity, cartItem) =>
-      accumulatedQuantity + cartItem.quantity * cartItem.price,
-    0
-  ).toFixed(2)
-}
+  return cartItems
+    .reduce(
+      (accumulatedQuantity, cartItem) =>
+        accumulatedQuantity + cartItem.quantity * cartItem.price,
+      0
+    )
+    .toFixed(2);
+};
 
 export const filterProducts = (products, id) => {
-  return products.find(
-    cartItem => cartItem.id === parseInt(id)
-  );
-}
+  return products.find(cartItem => cartItem.id === parseInt(id));
+};

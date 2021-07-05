@@ -15,7 +15,8 @@ const Main = () => {
 
   return (
     <Layout>
-      <main className="
+      <main
+        className="
         flex
         flex-wrap
         max-w-screen-xl

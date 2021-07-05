@@ -1,4 +1,4 @@
-import { ProductActionsTypes } from '@/redux/products/products.types'
+import { ProductActionsTypes } from "@/redux/products/products.types";
 
 const INITIAL_STATE = {
   products: []
@@ -6,12 +6,11 @@ const INITIAL_STATE = {
 
 const shopReducer = (state = INITIAL_STATE, action) => {
   switch (action.type) {
-
     case ProductActionsTypes.SET_PRODUCTS:
       return {
         ...state,
         products: action.payload
-      }
+      };
 
     default:
       return state;

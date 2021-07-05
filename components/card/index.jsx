@@ -1,33 +1,33 @@
-import React, { memo } from 'react'
-import Image from 'next/image'
+import React, { memo } from "react";
+import Image from "next/image";
 
-import { useRouter } from 'next/router'
+import { useRouter } from "next/router";
 import { useDispatch } from "react-redux";
 
 import ReactContentLoader from "@/components/skeleton";
 import { useObserver } from "@/hooks/useObserver";
 
-import { addItem } from '@/redux/cart/cart.actions';
+import { addItem } from "@/redux/cart/cart.actions";
 
-const Card = ({product}) => {
+const Card = ({ product }) => {
   const dispatch = useDispatch();
   const router = useRouter();
   const [show, element] = useObserver();
 
-  const {id, cover, name, price} = product;
+  const { id, cover, name, price } = product;
   const shortName = name.slice(0, 30);
 
   const handleAddCart = (e, product) => {
     e.stopPropagation();
-    dispatch(addItem(product))
-  }
+    dispatch(addItem(product));
+  };
 
   const handleClick = productId => {
     router.push({
       pathname: `/product/[id]`,
       query: { id: `${productId}` }
     });
-  }
+  };
 
   return (
     <article
@@ -43,18 +43,23 @@ const Card = ({product}) => {
         hover:-translate-y-2
         hover:scale-9
         cursor-pointer"
-        onClick={() => handleClick(id)}
-        ref={element}
+      onClick={() => handleClick(id)}
+      ref={element}
     >
       {show ? (
         <>
-          <Image src={cover} alt={shortName} width={450} height={300} />
+          <Image
+            src={cover}
+            alt={shortName}
+            width={450}
+            height={300}
+          />
           <p className="px-4 text-gray-600 font-bold">
-            Descripción: {shortName + '...'}
+            Descripción: {shortName + "..."}
           </p>
-          <div className="flex items-center justify-between mx-4"
-          >
-            <p className="
+          <div className="flex items-center justify-between mx-4">
+            <p
+              className="
             text-gray-600
               transition-all
               duration-500
@@ -63,18 +68,21 @@ const Card = ({product}) => {
               hover:-translate-y-1
               hover:scale-9
               sm:text-xl"
-              onClick={(e) => handleAddCart(e, product)}
-              ><i className="fas fa-cart-plus"></i>
+              onClick={e => handleAddCart(e, product)}
+            >
+              <i className="fas fa-cart-plus"></i>
             </p>
-            <p className="
+            <p
+              className="
               font-bold
               p-4
             text-gray-600"
-            >${price} MXN
+            >
+              ${price} MXN
             </p>
           </div>
         </>
-       ) : (
+      ) : (
         <ReactContentLoader
           peed={2}
           width={450}
@@ -84,12 +92,11 @@ const Card = ({product}) => {
           foregroundColor="#ddd"
           style={{ width: "100%" }}
         />
-       )
-      }
+      )}
     </article>
-  )
-}
+  );
+};
 
 export default memo(Card, (prevState, nextState) => {
-  return prevState.product.cover === nextState.product.cover
-})
+  return prevState.product.cover === nextState.product.cover;
+});

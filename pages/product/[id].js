@@ -1,15 +1,15 @@
-import Image from 'next/image'
-import Link from 'next/link'
-import { useRouter } from 'next/router'
-import { useDispatch } from 'react-redux'
+import Image from "next/image";
+import Link from "next/link";
+import { useRouter } from "next/router";
+import { useDispatch } from "react-redux";
 
-import Layout from '@/Layout/index'
-import Button from '@/components/button'
+import Layout from "@/Layout/index";
+import Button from "@/components/button";
 
-import { filterProducts } from '@/redux/cart/cart.utils'
-import getData from '@/utils/index'
+import { filterProducts } from "@/redux/cart/cart.utils";
+import getData from "@/utils/index";
 
-import { addItem } from '@/redux/cart/cart.actions';
+import { addItem } from "@/redux/cart/cart.actions";
 
 /**
  *
@@ -18,24 +18,23 @@ import { addItem } from '@/redux/cart/cart.actions';
  */
 
 export const getStaticPaths = async () => {
-
   const resProductsPaths = await getData(
     "https://products-api-meru.vercel.app/api/products"
-  ).catch((err) => {
-    console.log("ERROR", err)
-  })
+  ).catch(err => {
+    console.log("ERROR", err);
+  });
 
-  const paths = resProductsPaths.map((item) => ({
+  const paths = resProductsPaths.map(item => ({
     params: {
-      id: item.id.toString(),
+      id: item.id.toString()
     }
-  }))
+  }));
 
   return {
     paths,
     fallback: false
-  }
-}
+  };
+};
 
 /**
  *
@@ -46,9 +45,9 @@ export const getStaticPaths = async () => {
 export async function getStaticProps({ params }) {
   const resProductsStatic = await getData(
     "https://products-api-meru.vercel.app/api/products"
-  ).catch((err) => {
-    console.log("ERROR", err)
-  })
+  ).catch(err => {
+    console.log("ERROR", err);
+  });
 
   const data = filterProducts(resProductsStatic, params.id);
 
@@ -79,16 +78,17 @@ const ProductName = ({ product }) => {
   const { cover, name, price } = product;
 
   const handleAddProduct = () => {
-    dispatch(addItem(product))
-  }
+    dispatch(addItem(product));
+  };
 
   const handleCheckout = () => {
-    router.push('/checkout')
-  }
+    router.push("/checkout");
+  };
 
   return (
     <Layout>
-      <div className="
+      <div
+        className="
         max-w-screen-xl
         sm:mx-auto
         mx-14
@@ -97,14 +97,16 @@ const ProductName = ({ product }) => {
         cursor-pointer
         text-2xl
         sm:text-base
-      ">
+      "
+      >
         <Link href="/">
           <a>
             <p>INICIO &#10095;</p>
           </a>
         </Link>
       </div>
-      <div className="
+      <div
+        className="
         flex
         items-center
         max-w-screen-xl
@@ -115,10 +117,13 @@ const ProductName = ({ product }) => {
       >
         <div className="px-2">
           <Image src={cover} alt={name} width={550} height={400} />
-          <p className="font-bold text-center text-4xl text-gray-900">$ {price} MXN</p>
+          <p className="font-bold text-center text-4xl text-gray-900">
+            $ {price} MXN
+          </p>
         </div>
         <div className="w-full">
-          <p className="
+          <p
+            className="
             text-2xl
             sm:text-xl
             sm:border-l-2
@@ -126,9 +131,12 @@ const ProductName = ({ product }) => {
             text-gray-900
             px-4
             py-4"
-          > {name} </p>
+          >
+            {name}
+          </p>
           <div className="flex justify-between py-4">
-            <p className="text-gray-600
+            <p
+              className="text-gray-600
               transition-all
               duration-500
               ease-in-out
@@ -139,7 +147,9 @@ const ProductName = ({ product }) => {
               text-2xl
               sm:text-base"
               onClick={() => handleAddProduct()}
-            ><i className="fas fa-cart-plus"></i></p>
+            >
+              <i className="fas fa-cart-plus"></i>
+            </p>
             <Button
               handleClick={handleAddProduct}
               title="ADD TO CART"
@@ -147,15 +157,15 @@ const ProductName = ({ product }) => {
           </div>
           <div className="w-full flex justify-center py-4">
             <Button
-                handleClick={handleCheckout}
-                title="CHECKOUT"
-                width="400"
-              />
+              handleClick={handleCheckout}
+              title="CHECKOUT"
+              width="400"
+            />
           </div>
         </div>
       </div>
     </Layout>
-  )
-}
+  );
+};
 
-export default ProductName
+export default ProductName;

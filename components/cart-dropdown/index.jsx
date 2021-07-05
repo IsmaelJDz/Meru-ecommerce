@@ -1,10 +1,10 @@
-import { useRouter } from 'next/router';
-import { useSelector, useDispatch } from 'react-redux';
+import { useRouter } from "next/router";
+import { useSelector, useDispatch } from "react-redux";
 
-import CartItem from '@/components/cart-item';
-import Button from '@/components/button'
+import CartItem from "@/components/cart-item";
+import Button from "@/components/button";
 
-import { toggleCartHidden } from '@/redux/cart/cart.actions';
+import { toggleCartHidden } from "@/redux/cart/cart.actions";
 
 const CartDropdown = () => {
   const cartItems = useSelector(state => state.cart.cartItems);
@@ -12,12 +12,13 @@ const CartDropdown = () => {
   const dispatch = useDispatch();
 
   const handleClick = () => {
-    router.push('/checkout');
+    router.push("/checkout");
     dispatch(toggleCartHidden());
-  }
+  };
 
   return (
-    <div className="
+    <div
+      className="
       absolute
       w-56
       h-72
@@ -32,12 +33,14 @@ const CartDropdown = () => {
       bg-white
       "
     >
-      <div className="
+      <div
+        className="
         h-5/5
         flex
         flex-col
         overflow-scroll
-      ">
+      "
+      >
         {cartItems.length ? (
           cartItems.map(cartItem => (
             <CartItem key={cartItem.id} item={cartItem} />
@@ -45,10 +48,7 @@ const CartDropdown = () => {
         ) : (
           <span className="empty-message">Your cart is empty</span>
         )}
-        <Button
-          handleClick={handleClick}
-          title="GO TO CHECKOUT"
-        />
+        <Button handleClick={handleClick} title="GO TO CHECKOUT" />
       </div>
     </div>
   );

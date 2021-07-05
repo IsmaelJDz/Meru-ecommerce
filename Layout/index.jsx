@@ -9,11 +9,8 @@ const Home = ({ children }) => {
   return (
     <>
       <Head>
-      <title>Meru</title>
-        <meta
-          name="description"
-          content="The best products"
-        />
+        <title>Meru</title>
+        <meta name="description" content="The best products" />
         <meta
           name="viewport"
           content="initial-scale=1.0, width=device-width"
@@ -24,22 +21,18 @@ const Home = ({ children }) => {
         />
         <link
           rel="stylesheet"
-          href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" 
+          href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"
         />
         <link
           href="https://fonts.googleapis.com/css2?family=Open+Sans+Condensed:wght@300&display=swap"
           rel="stylesheet"
         />
-        <link
-          rel="icon"
-          href="/favicon.ico"
-        />
+        <link rel="icon" href="/favicon.ico" />
       </Head>
 
       <Header />
 
       {children}
-
     </>
   );
 };

@@ -1,13 +1,11 @@
 import { useSelector } from "react-redux";
-import Link from 'next/link';
-import Image from 'next/image';
+import Link from "next/link";
+import Image from "next/image";
 
-import CartIcon from '@/components/cart-icon/';
-import CartDropdown from '@/components/cart-dropdown';
-
+import CartIcon from "@/components/cart-icon/";
+import CartDropdown from "@/components/cart-dropdown";
 
 const Header = () => {
-
   const products = useSelector(state => state.cart);
 
   const hidden = products.hidden;
@@ -17,16 +15,25 @@ const Header = () => {
       <div className="">
         <Link href="/">
           <a>
-            <Image src="/img/logo.svg" height={60} width={150} alt="Logo" />
+            <Image
+              src="/img/logo.svg"
+              height={60}
+              width={150}
+              alt="Logo"
+            />
           </a>
         </Link>
       </div>
       <div className="flex gap-4 content-center items-center">
         <Link href="/">
-          <a className="p-2 hover:bg-gray-700 hover:text-white">SHOP</a>
+          <a className="p-2 hover:bg-gray-700 hover:text-white">
+            SHOP
+          </a>
         </Link>
         <Link href="/checkout">
-          <a className="p-2 hover:bg-gray-700 hover:text-white">CHECKOUT</a>
+          <a className="p-2 hover:bg-gray-700 hover:text-white">
+            CHECKOUT
+          </a>
         </Link>
         <CartIcon />
       </div>

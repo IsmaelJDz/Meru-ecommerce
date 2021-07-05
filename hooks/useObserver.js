@@ -18,13 +18,16 @@ export function useObserver() {
         threshold: 0.25
       };
 
-      const observer = new window.IntersectionObserver(function (entries) {
+      const observer = new window.IntersectionObserver(function (
+        entries
+      ) {
         const { isIntersecting } = entries[0];
         if (isIntersecting) {
           setShow(true);
           observer.disconnect();
         }
-      }, options);
+      },
+      options);
       observer.observe(element.current);
     },
     [element.current]

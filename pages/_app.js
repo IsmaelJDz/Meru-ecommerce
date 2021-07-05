@@ -1,11 +1,10 @@
+import { Provider } from "react-redux";
 
-import { Provider } from 'react-redux';
+import { PersistGate } from "redux-persist/integration/react";
 
-import { PersistGate } from 'redux-persist/integration/react';
+import { store, persistor } from "@/redux/store";
 
-import { store, persistor } from '@/redux/store';
-
-import '../styles/index.css'
+import "../styles/index.css";
 
 function MyApp({ Component, pageProps }) {
   return (

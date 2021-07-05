@@ -1,5 +1,8 @@
-import { CartActionsTypes } from '@/redux/cart/cart.types';
-import { addItemToCart, removeItemFromCart } from '@/redux/cart/cart.utils';
+import { CartActionsTypes } from "@/redux/cart/cart.types";
+import {
+  addItemToCart,
+  removeItemFromCart
+} from "@/redux/cart/cart.utils";
 
 const INITIAL_STATE = {
   hidden: true,
@@ -35,7 +38,7 @@ const cartReducer = (state = INITIAL_STATE, action) => {
       };
 
     case CartActionsTypes.CLEAR_CART:
-      localStorage.removeItem('persist:root');
+      localStorage.removeItem("persist:root");
       return {
         ...state,
         cartItems: []

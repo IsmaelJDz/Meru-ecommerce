@@ -1,9 +1,9 @@
 import { useDispatch } from "react-redux";
-import Principal from "@/components/main"
+import Principal from "@/components/main";
 
 import { setProducts } from "@/redux/products/products.action";
 
-import getData from '@/utils/index'
+import getData from "@/utils/index";
 
 /**
  *
@@ -11,22 +11,20 @@ import getData from '@/utils/index'
  * @returns Component -> Principal
  */
 
-export default function Home({products}) {
+export default function Home({ products }) {
   const dispatch = useDispatch();
 
   dispatch(setProducts(products));
 
   return <Principal />;
-
 }
 
 export async function getStaticProps() {
-
   const data = await getData(
     "https://products-api-meru.vercel.app/api/products"
-  ).catch((err) => {
-    console.log("ERROR", err)
-  })
+  ).catch(err => {
+    console.log("ERROR", err);
+  });
 
   if (!data) {
     return {
