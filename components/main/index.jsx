@@ -1,13 +1,11 @@
 import { useSelector } from "react-redux";
 
-//import styles from "./main.module.scss";
-
-import Layout from "../../Layout";
-import Card from "../card";
+import Layout from "@/Layout/index";
+import Card from "@/components/card";
 
 /**
  *
- * @returns Main movies card
+ * @returns Main products card
  */
 
 const Main = () => {

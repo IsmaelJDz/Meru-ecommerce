@@ -1,15 +1,15 @@
 import React, { memo } from 'react'
 import Image from 'next/image'
-import ReactContentLoader from "../skeleton";
-import { useObserver } from "../../hooks/useObserver";
 
 import { useRouter } from 'next/router'
-
 import { useDispatch } from "react-redux";
 
-import { addItem } from '../../redux/cart/cart.actions';
+import ReactContentLoader from "@/components/skeleton";
+import { useObserver } from "@/hooks/useObserver";
 
-const Card = memo(({product}) => {
+import { addItem } from '@/redux/cart/cart.actions';
+
+const Card = ({product}) => {
   const dispatch = useDispatch();
   const router = useRouter();
   const [show, element] = useObserver();
@@ -48,7 +48,7 @@ const Card = memo(({product}) => {
     >
       {show ? (
         <>
-          <Image src={cover} alt={name} width={450} height={300} />
+          <Image src={cover} alt={shortName} width={450} height={300} />
           <p className="px-4 text-gray-600 font-bold">
             Descripción: {shortName + '...'}
           </p>
@@ -88,8 +88,8 @@ const Card = memo(({product}) => {
       }
     </article>
   )
-}, (prevState, nextState) => {
+}
+
+export default memo(Card, (prevState, nextState) => {
   return prevState.product.cover === nextState.product.cover
 })
-
-export default Card

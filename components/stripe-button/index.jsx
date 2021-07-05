@@ -1,10 +1,10 @@
 import React from 'react';
 import { useRouter } from 'next/router'
+import { useDispatch } from 'react-redux';
 
 import StripeCheckout from 'react-stripe-checkout';
 
-import { useDispatch } from 'react-redux';
-import { clearCart } from '../../redux/cart/cart.actions';
+import { clearCart } from '@/redux/cart/cart.actions';
 
 const StripeCheckoutButton = ({ price }) => {
   const dispatch = useDispatch();

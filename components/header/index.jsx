@@ -3,7 +3,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 
 import CartIcon from '@/components/cart-icon/';
-import CartDropdown from '../cart-dropdown';
+import CartDropdown from '@/components/cart-dropdown';
 
 
 const Header = () => {
@@ -17,7 +17,7 @@ const Header = () => {
       <div className="">
         <Link href="/">
           <a>
-            <Image src="/img/logo.svg" height={60} width={150} />
+            <Image src="/img/logo.svg" height={60} width={150} alt="Logo" />
           </a>
         </Link>
       </div>

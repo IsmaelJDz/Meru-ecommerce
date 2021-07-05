@@ -3,7 +3,7 @@ import ContentLoader from "react-content-loader";
 /**
  *
  * @param {*} props custom
- * @returns movie skeleton
+ * @returns product skeleton
  */
 
 const Catalog = props => (

@@ -3,13 +3,19 @@ import Link from 'next/link'
 import { useRouter } from 'next/router'
 import { useDispatch } from 'react-redux'
 
-import Layout from '../../Layout'
+import Layout from '@/Layout/index'
 import Button from '@/components/button'
 
-import { filterProducts } from '../../redux/cart/cart.utils'
-import getData from '../../utils'
+import { filterProducts } from '@/redux/cart/cart.utils'
+import getData from '@/utils/index'
 
-import { addItem } from '../../redux/cart/cart.actions';
+import { addItem } from '@/redux/cart/cart.actions';
+
+/**
+ *
+ * @param {*} api -> EndPoint -> url"
+ * @returns array dynamic paths
+ */
 
 export const getStaticPaths = async () => {
 
@@ -30,6 +36,12 @@ export const getStaticPaths = async () => {
     fallback: false
   }
 }
+
+/**
+ *
+ * @param {*} api -> EndPoint -> url "should be specified 'id'"
+ * @returns specific data by id product
+ */
 
 export async function getStaticProps({ params }) {
   const resProductsStatic = await getData(
@@ -106,7 +118,15 @@ const ProductName = ({ product }) => {
           <p className="font-bold text-center text-4xl text-gray-900">$ {price} MXN</p>
         </div>
         <div className="w-full">
-          <p className="text-2xl sm:text-xl sm:border-l-2 border-gray-900 text-gray-900 px-4 py-4"> {name} </p>
+          <p className="
+            text-2xl
+            sm:text-xl
+            sm:border-l-2
+            border-gray-900
+            text-gray-900
+            px-4
+            py-4"
+          > {name} </p>
           <div className="flex justify-between py-4">
             <p className="text-gray-600
               transition-all

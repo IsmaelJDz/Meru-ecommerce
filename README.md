@@ -1,46 +1,38 @@
-# Frontend ecommerce online
+# Frontend Meru Ecommerce Online 🛍
 
-![Captura de la app](../landing.png)
+![Captura de la app](public/img/Home.png)
 
 [See the aplication](https://ismaeljdz.github.io/LightDarkMode/) 👀
 
 ## Welcome! 👋
 
-## light and dark mode 🚀
-
-\*\* Technologies Frontend 🛠
+\*\* Frontend Technologies 🛠
 
 - HTML5
 - CSS3
 - JavaScript,
 - React,
-- Apollo client,
 - Next,
-- Typescript,
 - Redux
-- React testing library
-- Husky
+- Tailwind
 
-\*\* Technologies Backend 🛠
+## Pre-requirements 📋
 
-- Apollo Server,
-- GraphQl,
-- MongoDB
+- Node
+- Npm
 
-### Pre-requirements 📋
-
-_Que cosas necesitas para instalar el software y como instalarlas_
+## Run app " Development " ⚙️
 
 ```
-NodeJs, NPM
+1.- npm install or yarn install
+2.- npm run dev or yarn dev  --Mode development
 ```
+## Run app " Production " 🚀
 
-## Autores ✒️
-
-_Developed by_
-
-- **Ismael JDz7** - _Frontend-Developer_ - [IsmaelJdz7](https://github.com/IsmaelJDz)
-- **Ismael JDz7** - _Backend-Developer_ - [IsmaelJdz7](https://github.com/IsmaelJDz)
+```
+1.- npm run build or yarn build
+2.- npm run start or yarn start  --Mode production
+```
 
 ## Deployment 📦
 
@@ -48,9 +40,17 @@ _add additional notes about how to do deploy_
 
 _Tools I've used in this project_
 
-- [Apollo-Server](https://www.apollographql.com/docs/apollo-server/) - Apollo Server
-- [Npm](https://www.npmjs.com/) - Manejador de dependencias
+- [Npm](https://www.npmjs.com/) - Npm
+- [React](https://es.reactjs.org/) - React
+- [NextJs](https://nextjs.org/) - NextJs
+- [Tailwind](https://tailwindcss.com/) - Tailwind
+
+## Author ✒️
+
+_Developed by_
+
+- **Ismael JDz7** - _Frontend-Developer_ - [IsmaelJdz7](https://github.com/IsmaelJDz)
 
 ---
 
-⌨️ con ❤️ por el ☕️ por [IsmaelJDz7](https://github.com/IsmaelJDz) 😊
+⌨️ with ❤️ by [IsmaelJDz7](https://github.com/IsmaelJDz) 😊

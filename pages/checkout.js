@@ -1,9 +1,9 @@
 import { useSelector } from 'react-redux'
 
-import Layout from '../Layout'
+import Layout from '@/Layout/index'
 import CheckoutItem from '@/components/checkout-item';
 
-import StripeCheckoutButton from '../components/stripe-button';
+import StripeCheckoutButton from '@/components/stripe-button';
 
 import {
   selectCartTotal
@@ -54,14 +54,24 @@ const CheckoutPage = () => {
             cartItems.map(cartItem => (
               <CheckoutItem key={cartItem.id} cartItem={cartItem} />
             ))
-          ) : <p className="text-2xl py-8">there's no items on your cart</p>
+          ) : <p className="text-2xl py-8">there is no items on your cart</p>
         }
         <div className="total">
           <span className="block">TOTAL: ${selectCartTotal(cartItems)} </span>
           {
             cartItems.length !== 0 ? (
               <StripeCheckoutButton price={selectCartTotal(cartItems)} />
-            ) : <button className="bg-blue-500 text-base text-white font-bold py-2 px-4 rounded opacity-50 cursor-not-allowed">
+            ) : <button className="
+                bg-blue-500
+                  text-base
+                text-white
+                  font-bold
+                  py-2
+                  px-4
+                  rounded
+                  opacity-50
+                  cursor-not-allowed"
+                >
                   Pay Now
                 </button>
           }

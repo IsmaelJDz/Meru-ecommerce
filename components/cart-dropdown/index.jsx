@@ -1,10 +1,10 @@
 import { useRouter } from 'next/router';
 import { useSelector, useDispatch } from 'react-redux';
 
-import CartItem from '../cart-item';
-import Button from '../button'
+import CartItem from '@/components/cart-item';
+import Button from '@/components/button'
 
-import { toggleCartHidden } from '../../redux/cart/cart.actions';
+import { toggleCartHidden } from '@/redux/cart/cart.actions';
 
 const CartDropdown = () => {
   const cartItems = useSelector(state => state.cart.cartItems);

@@ -1,14 +1,14 @@
 import { useDispatch } from "react-redux";
 import Principal from "@/components/main"
 
-import { setProducts } from "../redux/products/products.action";
+import { setProducts } from "@/redux/products/products.action";
 
-import getData from '../utils'
+import getData from '@/utils/index'
 
 /**
  *
  * @param {*} props gets data from api, server to client SSR
- * @returns Main movies container
+ * @returns Component -> Principal
  */
 
 export default function Home({products}) {

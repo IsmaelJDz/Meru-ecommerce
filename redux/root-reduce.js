@@ -2,9 +2,8 @@ import { combineReducers } from 'redux';
 import { persistReducer } from 'redux-persist';
 import storage from 'redux-persist/lib/storage';
 
-import cartReducer from './cart/cart.reducer';
-import productsReducer from './products/products.reducer';
-//import shopReducer from './shop/shop.reducer';
+import cartReducer from '@/redux/cart/cart.reducer';
+import productsReducer from '@/redux/products/products.reducer';
 
 const persistConfig = {
   key: 'root',
@@ -15,7 +14,6 @@ const persistConfig = {
 const rootReducer = combineReducers({
   cart: cartReducer,
   products: productsReducer,
-  //shop: shopReducer,
 });
 
 export default persistReducer(persistConfig, rootReducer);
