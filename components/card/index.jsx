@@ -67,6 +67,7 @@ const Card = ({ product }) => {
               transform
               hover:-translate-y-1
               hover:scale-9
+              text-3xl
               sm:text-xl"
               onClick={e => handleAddCart(e, product)}
             >
