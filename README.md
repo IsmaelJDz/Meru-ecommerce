@@ -27,11 +27,13 @@
 1.- npm install or yarn install
 2.- npm run dev or yarn dev  --Mode development
 ```
+
 ## Run app " Production " 🚀
 
 ```
-1.- npm run build or yarn build
-2.- npm run start or yarn start  --Mode production
+1.- npm install or yarn install
+2.- npm run build or yarn build
+3.- npm run start or yarn start  --Mode production
 ```
 
 ## Deployment 📦
