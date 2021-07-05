@@ -20,15 +20,18 @@ const CartDropdown = () => {
     <div
       className="
       absolute
-      w-56
+      w-72
+      sm:w-60
       h-72
       flex
       flex-col
       p-4
       border
       border-gray-900
-      top-16
-      right-0
+      top-28
+      right-5
+      sm:top-16
+      sm:right-0
       z-20
       bg-white
       "
