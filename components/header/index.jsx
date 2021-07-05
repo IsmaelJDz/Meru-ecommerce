@@ -22,11 +22,11 @@ const Header = () => {
         </Link>
       </div>
       <div className="flex gap-4 content-center items-center">
-        <Link href="/contact">
-          <a className="p-2 hover:bg-gray-700 hover:text-white rounded">CONTACT</a>
+        <Link href="/">
+          <a className="p-2 hover:bg-gray-700 hover:text-white">SHOP</a>
         </Link>
-        <Link href="/shop">
-          <a className="p-2 hover:bg-gray-700 hover:text-white rounded">SHOP</a>
+        <Link href="/checkout">
+          <a className="p-2 hover:bg-gray-700 hover:text-white">CHECKOUT</a>
         </Link>
         <CartIcon />
       </div>

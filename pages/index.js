@@ -3,6 +3,8 @@ import Principal from "@/components/main"
 
 import { setProducts } from "../redux/products/products.action";
 
+import getData from '../utils'
+
 /**
  *
  * @param {*} props gets data from api, server to client SSR
@@ -19,10 +21,12 @@ export default function Home({products}) {
 }
 
 export async function getStaticProps() {
-  const res = await fetch(
+
+  const data = await getData(
     "https://products-api-meru.vercel.app/api/products"
-  );
-  const data = await res.json();
+  ).catch((err) => {
+    console.log("ERROR", err)
+  })
 
   if (!data) {
     return {

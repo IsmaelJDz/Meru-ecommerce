@@ -1,7 +1,30 @@
+:root {
+  --black-classic: #000000;
+  --blue-dark: #002554;
+}
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 body {
   font-family: 'Open Sans Condensed';
+}
+
+.margin-custom {
+  margin: 50px auto;
+}
+
+.padding-custom {
+  padding: 10px 0;
+}
+
+.border-custom {
+  border-bottom: 1px solid var(--blue-dark);
+}
+
+.total {
+  margin-top: 30px;
+  margin-left: auto;
+  font-size: 36px;
 }

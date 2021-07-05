@@ -15,7 +15,10 @@ const CartItemMemo = ({ item: { cover, price, name, quantity } }) => {
 }
 
 const CartItem = ({ item }) => {
-  const CartItem = useMemo(() => <CartItemMemo item={item} />, [])
+
+  const {quantity} = item;
+
+  const CartItem = useMemo(() => <CartItemMemo item={item} />, [quantity])
   return CartItem;
 };
 

@@ -19,9 +19,9 @@ const CartIcon = () => {
   }
 
   return (
-    <div className="cart-icon" onClick={handleToggleCart}>
+    <div className="cart-icon relative cursor-pointer" onClick={handleToggleCart}>
       <Image src="/img/shopping-bag.svg" height={30} width={30} />
-      <span className="item-count"> {itemsCount()} </span>
+      <span className="absolute font-bold w-full left-0 right-0 bottom-1 text-center text-md"> {itemsCount()} </span>
     </div>
   );
 };

@@ -30,10 +30,24 @@ export const removeItemFromCart = (cartItems, cartItemToRemove) => {
   );
 };
 
-export const selectCartItemsCount = (cartItems) => {
+export const selectCartItemsCount = cartItems => {
   return cartItems.reduce(
     (accumulatedQuantity, cartItem) =>
       accumulatedQuantity + cartItem.quantity,
     0
   )
+}
+
+export const selectCartTotal = cartItems => {
+  return cartItems.reduce(
+    (accumulatedQuantity, cartItem) =>
+      accumulatedQuantity + cartItem.quantity * cartItem.price,
+    0
+  ).toFixed(2)
+}
+
+export const filterProducts = (products, id) => {
+  return products.find(
+    cartItem => cartItem.id === parseInt(id)
+  );
 }
