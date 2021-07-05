@@ -36,12 +36,12 @@ const Card = ({ product }) => {
         w-5/6
         sm:w-5/12
         lg:w-3/12
-        transition-all
+        sm:transition-all
         duration-500
         ease-in-out
         transform
-        hover:-translate-y-2
-        hover:scale-9
+        sm:hover:-translate-y-2
+        sm:hover:scale-9
         cursor-pointer"
       onClick={() => handleClick(id)}
       ref={element}
