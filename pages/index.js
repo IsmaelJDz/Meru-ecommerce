@@ -28,6 +28,8 @@ export async function getStaticProps() {
     console.log("ERROR", err);
   });
 
+  console.log("data", data);
+
   if (!data) {
     return {
       redirect: {
@@ -40,9 +42,11 @@ export async function getStaticProps() {
     return { notFound: true };
   }
 
+  const { products } = data;
+
   return {
     props: {
-      products: data
+      products: products
     },
     revalidate: 60
   };

@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import React from "react";
 
 import { useSelector } from "react-redux";
 
@@ -11,14 +11,7 @@ import Card from "@/components/card";
  */
 
 const Main = () => {
-  const products = useSelector(state => state.products);
-  // const [products, setProducts] = useState([]);
-
-  // let totalProducts = [];
-
-  // useEffect(() => {
-  //   setProducts(productsState?.products?.places);
-  // }, [productsState]);
+  const { products } = useSelector(state => state.products);
 
   return (
     <Layout>
