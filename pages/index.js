@@ -21,7 +21,9 @@ export default function Home({ products }) {
 
 export async function getStaticProps() {
   const data = await getData(
-    "https://products-api-meru.vercel.app/api/products"
+    process.env.NODE_ENV === "development"
+      ? "http://localhost:3000/api/products"
+      : "https://products-api-meru.vercel.app/api/products"
   ).catch(err => {
     console.log("ERROR", err);
   });

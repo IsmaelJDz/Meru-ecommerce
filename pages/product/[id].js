@@ -19,12 +19,14 @@ import { addItem } from "@/redux/cart/cart.actions";
 
 export const getStaticPaths = async () => {
   const resProductsPaths = await getData(
-    "https://products-api-meru.vercel.app/api/products"
+    process.env.NODE_ENV === "development"
+      ? "http://localhost:3000/api/products"
+      : "https://products-api-meru.vercel.app/api/products"
   ).catch(err => {
     console.log("ERROR", err);
   });
 
-  const paths = resProductsPaths.map(item => ({
+  const paths = resProductsPaths.places.map(item => ({
     params: {
       id: item.id.toString()
     }
@@ -44,7 +46,9 @@ export const getStaticPaths = async () => {
 
 export async function getStaticProps({ params }) {
   const resProductsStatic = await getData(
-    "https://products-api-meru.vercel.app/api/products"
+    process.env.NODE_ENV === "development"
+      ? "http://localhost:3000/api/products"
+      : "https://products-api-meru.vercel.app/api/products"
   ).catch(err => {
     console.log("ERROR", err);
   });
@@ -87,65 +91,27 @@ const ProductName = ({ product }) => {
 
   return (
     <Layout>
-      <div
-        className="
-        max-w-screen-xl
-        sm:mx-auto
-        mx-14
-        py-2
-        sm:px-8
-        cursor-pointer
-        text-2xl
-        sm:text-base
-      "
-      >
+      <div className="max-w-screen-xl py-2 text-2xl cursor-pointer sm:mx-auto mx-14 sm:px-8 sm:text-base">
         <Link href="/">
           <a>
             <p>INICIO &#10095;</p>
           </a>
         </Link>
       </div>
-      <div
-        className="
-        flex
-        items-center
-        max-w-screen-xl
-        mx-auto
-        flex-col
-        w-5/6
-        sm:flex-row"
-      >
+      <div className="flex flex-col items-center w-5/6 max-w-screen-xl mx-auto sm:flex-row">
         <div className="px-2">
           <Image src={cover} alt={name} width={550} height={400} />
-          <p className="font-bold text-center text-4xl text-gray-900">
+          <p className="text-4xl font-bold text-center text-gray-900">
             $ {price} MXN
           </p>
         </div>
         <div className="w-full">
-          <p
-            className="
-            text-2xl
-            sm:text-xl
-            sm:border-l-2
-            border-gray-900
-            text-gray-900
-            px-4
-            py-4"
-          >
+          <p className="px-4 py-4 text-2xl text-gray-900 border-gray-900 sm:text-xl sm:border-l-2">
             {name}
           </p>
           <div className="flex justify-between py-4">
             <p
-              className="text-gray-600
-              transition-all
-              duration-500
-              ease-in-out
-              transform
-              hover:-translate-y-1
-              hover:scale-9
-              cursor-pointer
-              text-2xl
-              sm:text-base"
+              className="text-2xl text-gray-600 transition-all duration-500 ease-in-out transform cursor-pointer hover:-translate-y-1 hover:scale-9 sm:text-base"
               onClick={() => handleAddProduct()}
             >
               <i className="fas fa-cart-plus"></i>
@@ -155,7 +121,7 @@ const ProductName = ({ product }) => {
               title="ADD TO CART"
             />
           </div>
-          <div className="w-full flex justify-center py-4">
+          <div className="flex justify-center w-full py-4">
             <Button
               handleClick={handleCheckout}
               title="CHECKOUT"

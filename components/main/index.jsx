@@ -1,3 +1,5 @@
+import { useState, useEffect } from "react";
+
 import { useSelector } from "react-redux";
 
 import Layout from "@/Layout/index";
@@ -9,23 +11,19 @@ import Card from "@/components/card";
  */
 
 const Main = () => {
-  const products = useSelector(state => state.products);
+  const productsState = useSelector(state => state.products);
+  const [products, setProducts] = useState([]);
 
-  const totalProducts = products.products;
+  let totalProducts = [];
+
+  useEffect(() => {
+    setProducts(productsState.products.places);
+  }, [productsState]);
 
   return (
     <Layout>
-      <main
-        className="
-        flex
-        flex-wrap
-        max-w-screen-xl
-        gap-4
-        justify-center
-        md:mx-auto
-        my-6"
-      >
-        {totalProducts.map(product => (
+      <main className="flex flex-wrap justify-center max-w-screen-xl gap-4 my-6 md:mx-auto">
+        {products.map(product => (
           <Card product={product} key={product.id} />
         ))}
       </main>
