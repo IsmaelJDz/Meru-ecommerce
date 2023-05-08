@@ -21,7 +21,7 @@ export const getStaticPaths = async () => {
   const resProductsPaths = await getData(
     process.env.NODE_ENV === "development"
       ? "http://localhost:3000/api/products"
-      : "https://products-api-meru.vercel.app/api/products"
+      : "https://meru-ecommerce/api/products"
   ).catch(err => {
     console.log("ERROR", err);
   });
@@ -48,7 +48,7 @@ export async function getStaticProps({ params }) {
   const resProductsStatic = await getData(
     process.env.NODE_ENV === "development"
       ? "http://localhost:3000/api/products"
-      : "https://products-api-meru.vercel.app/api/products"
+      : "https://meru-ecommerce/api/products"
   ).catch(err => {
     console.log("ERROR", err);
   });

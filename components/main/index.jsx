@@ -17,7 +17,7 @@ const Main = () => {
   let totalProducts = [];
 
   useEffect(() => {
-    setProducts(productsState.products.places);
+    setProducts(productsState?.products?.places);
   }, [productsState]);
 
   return (
