@@ -51,7 +51,8 @@ export const selectCartTotal = cartItems => {
 };
 
 export const filterProducts = (products, id) => {
-  return products.places.find(
-    cartItem => cartItem.id === parseInt(id)
-  );
+  // return products.places.find(
+  //   cartItem => cartItem.id === parseInt(id)
+  // );
+  return products.find(cartItem => cartItem.id === parseInt(id));
 };

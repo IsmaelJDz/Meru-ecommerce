@@ -23,7 +23,7 @@ export async function getStaticProps() {
   const data = await getData(
     process.env.NODE_ENV === "development"
       ? "http://localhost:3000/api/products"
-      : "https://meru-ecommerce/api/products"
+      : "https://basic-api-products.vercel.app/api/products"
   ).catch(err => {
     console.log("ERROR", err);
   });

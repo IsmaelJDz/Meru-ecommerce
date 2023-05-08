@@ -11,14 +11,14 @@ import Card from "@/components/card";
  */
 
 const Main = () => {
-  const productsState = useSelector(state => state.products);
-  const [products, setProducts] = useState([]);
+  const products = useSelector(state => state.products);
+  // const [products, setProducts] = useState([]);
 
-  let totalProducts = [];
+  // let totalProducts = [];
 
-  useEffect(() => {
-    setProducts(productsState?.products?.places);
-  }, [productsState]);
+  // useEffect(() => {
+  //   setProducts(productsState?.products?.places);
+  // }, [productsState]);
 
   return (
     <Layout>
